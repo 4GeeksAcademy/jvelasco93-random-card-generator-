@@ -1,7 +1,7 @@
 import "bootstrap";
 import "./style.css";
 
-class FrenchDeck {
+class RandomCardGenerator {
   static SUITS = {
     HEARTS: { symbol: "♥", colorClass: "text-danger" },
     DIAMONDS: { symbol: "♦", colorClass: "text-danger" },
@@ -11,18 +11,12 @@ class FrenchDeck {
 
   static VALUES = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
 
-  static COLOR_CLASSES = [
-    ...new Set(
-      Object.values(FrenchDeck.SUITS).map(suite => {
-        return suite.colorClass;
-      })
-    )
-  ]
+  static COLOR_CLASSES = ['text-danger', 'text-dark'];
 
-  generate() {
+  static generate() {
     return {
-      suit: randomItem(Object.values(FrenchDeck.SUITS)),
-      value: randomItem(FrenchDeck.VALUES)
+      suit: randomItem(Object.values(RandomCardGenerator.SUITS)),
+      value: randomItem(RandomCardGenerator.VALUES)
     }
   }
 }
@@ -36,19 +30,22 @@ function renderCard(aCard) {
   bottomSuit.textContent = aCard.suit.symbol;
   cardValue.textContent = aCard.value;
 
-  [topSuit, bottomSuit, cardValue].forEach(component => {
-    component.classList.remove(...FrenchDeck.COLOR_CLASSES);
-    component.classList.add(aCard.suit.colorClass);
-  })
+  applySuitColor([topSuit, bottomSuit, cardValue], aCard.suit);
 }
 
-const deck = new FrenchDeck();
 
 window.onload = function () {
-  renderCard(deck.generate());
+  renderCard(RandomCardGenerator.generate());
   document
     .getElementById('generateCardButton')
-    .addEventListener("click", () => renderCard(deck.generate()));
+    .addEventListener("click", () => renderCard(RandomCardGenerator.generate()));
+};
+
+function applySuitColor(elements, aSuit) {
+  elements.forEach(element => {
+    element.classList.remove(...RandomCardGenerator.COLOR_CLASSES);
+    element.classList.add(aSuit.colorClass);
+  });
 };
 
 function randomItem(anArray) {
