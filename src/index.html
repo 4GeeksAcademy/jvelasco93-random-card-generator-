@@ -10,7 +10,29 @@
     integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" />
 </head>
 
-<body>
+<body class="bg-success min-vh-100 d-flex justify-content-center align-items-center">
+  <main class="d-flex flex-column align-items-center gap-4">
+
+    <div class="card playing-card shadow-lg rounded-4 border-0">
+
+      <div class="cord-body d-flex flex-column justify-content-between p-3">
+
+        <div id="topSuit" class="card-suit align-self-start"></div>
+
+        <div class="text-center">
+          <span id="cardValue" class="card-value"></span>
+        </div>
+
+        <div id="bottomSuit" class="card-suit bottom-suit align-self-end"></div>
+      </div>
+    </div>
+
+
+
+    <button id="generateCardButton" type="button" class="btn btn-light shadow">
+      <span class="">New Card</span>
+    </button>
+  </main>
 
   <script type="module" src="/app.js"></script>
 </body>
