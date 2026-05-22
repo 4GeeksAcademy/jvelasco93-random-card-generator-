@@ -1,21 +1,27 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
 
 .playing-card {
-    width: 16rem;
-    height: 26rem;
+  width: 16rem;
+  height: 26rem;
 }
 
 .card-suit {
-    font-size: 4rem;
-    line-height: 1;
+  font-size: 4rem;
+  line-height: 1;
 }
 
 .bottom-suit {
-    transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 .card-value {
-    font-size: 6rem;
-    line-height: 1;
-    font-weight: 400;
+  font-size: 6rem;
+  line-height: 1;
+  font-weight: 400;
+}
+
+.card-action-button {
+  min-width: 8rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
 }
