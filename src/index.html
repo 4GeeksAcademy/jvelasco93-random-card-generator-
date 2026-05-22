@@ -10,11 +10,39 @@
     integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" />
 </head>
 
-<body class="bg-success min-vh-100 d-flex justify-content-center align-items-center">
-  <main class="d-flex flex-column align-items-center gap-4">
-    <div id="autoStatusAlertContainer" class="w-100 d-flex justify-content-center"></div>
+<body class="bg-success min-vh-100">
+  <header class="fixed-top bg-light shadow py-3">
+    <div class="container d-flex align-items-center justify-content-center gap-4">
+      <div class="d-flex align-items-center gap-2">
+        <label for="cardWidthRange" class="form-label fw-semibold mb-0">
+          Width:
+        </label>
+        <input type="range" class="form-range card-size-range" id="cardWidthRange" min="200" max="360" />
+        <span>
+          <span id="cardWidthValue">--</span><span>px</span>
+        </span>
+      </div>
 
-    <div class="card playing-card shadow-lg rounded-4 border-0">
+      <div class="d-flex align-items-center gap-2">
+        <label for="cardHeightRange" class="form-label fw-semibold mb-0">
+          Height:
+        </label>
+        <input type="range" class="form-range card-size-range" id="cardHeightRange" min="360" max="560" />
+        <span>
+          <span id="cardHeightValue">--</span><span>px</span>
+        </span>
+      </div>
+
+      <button id="resetCardSizeButton" class="btn btn-outline-secondary btn-sm">
+        Reset size
+      </button>
+    </div>
+  </header>
+
+  <main class="d-flex flex-column align-items-center gap-4 pt-4">
+    <div id="autoStatusAlertContainer" class="w-100 d-flex justify-content-center mt-4"></div>
+
+    <div class="card playing-card shadow-lg rounded-4 border-0 p-2">
       <div class="card-body d-flex flex-column justify-content-between p-3">
         <div id="topSuit" class="card-suit align-self-start"></div>
 
@@ -30,15 +58,12 @@
       <button id="generateCardButton" class="btn btn-light shadow card-action-button">
         <span class="text-uppercase">new card</span>
       </button>
+
       <button id="autoCardButton" class="btn btn-primary shadow card-action-button">
         <span class="text-uppercase">start auto</span>
       </button>
     </div>
-
-
   </main>
-
-
 
   <script type="module" src="./app.js"></script>
 </body>

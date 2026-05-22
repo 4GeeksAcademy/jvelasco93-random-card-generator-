@@ -2,6 +2,7 @@ import "bootstrap";
 import "./style.css";
 
 import { setupAutoCard } from "./autoCard.js";
+import { setupCardSizeControls } from "./cardSize.js";
 
 class RandomCardGenerator {
   static SUITS = {
@@ -47,6 +48,8 @@ window.onload = function () {
     .addEventListener("click", generateAndRenderCard);
 
   setupAutoCard(generateAndRenderCard);
+
+  setupCardSizeControls();
 };
 
 function applySuitColor(elements, aSuit) {

@@ -1,12 +1,16 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
 
+body {
+  padding-top: 5rem;
+}
+
 .playing-card {
-  width: 16rem;
-  height: 26rem;
+  width: var(--card-width, 16rem);
+  height: var(--card-height, 26rem);
 }
 
 .card-suit {
-  font-size: 4rem;
+  font-size: var(--card-suit-size, 4rem);
   line-height: 1;
 }
 
@@ -15,7 +19,7 @@
 }
 
 .card-value {
-  font-size: 6rem;
+  font-size: var(--card-value-size, 6rem);
   line-height: 1;
   font-weight: 400;
 }
@@ -24,4 +28,8 @@
   min-width: 8rem;
   font-weight: 500;
   letter-spacing: 0.03em;
+}
+
+.card-size-range {
+  width: 10rem;
 }
